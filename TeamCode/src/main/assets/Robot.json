@@ -1,0 +1,60 @@
+{
+  "Hardware": {
+    "DcMotors":{
+      "Drive": {
+        "Front Left Motor": {
+          "Port": "C0",
+          "Name": "FLM",
+          "Reverse": false,
+          "BrakeType": "float"
+        },
+        "Front Right Motor": {
+          "Port": "E1",
+          "Name": "FRM",
+          "Reverse": true,
+          "BrakeType": "float"
+        },
+        "Back Left Motor": {
+          "Port": "C1",
+          "Name": "BLM",
+          "Reverse": false,
+          "BrakeType": "float"
+        },
+        "Back Right Motor": {
+          "Port": "E0",
+          "Name": "BRM",
+          "Reverse": true,
+          "BrakeType": "float"
+        }
+      },
+      "Peripherals": {
+        "Spinner": {
+          "Port": "",
+          "Name": "spin",
+          "Reverse": false,
+          "BrakeType": "float"
+        },
+        "InOut": {
+          "Port": "",
+          "Name": "inout",
+          "Reverse": false,
+          "BrakeType": "float"
+        },
+        "Lift": {
+          "Port": "",
+          "Name": "lift",
+          "Reverse": false,
+          "BrakeType": "brake"
+        }
+      }
+    },
+    "Servos": {
+
+    },
+    "Sensors": {
+      "Voltage": {
+
+      }
+    }
+  }
+}
