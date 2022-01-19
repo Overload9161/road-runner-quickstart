@@ -51,43 +51,43 @@ public class MeepMeepC {
 		
 		// For the first blue location
 		// TODO: This
-		RoadRunnerBotEntity blue1 = new DefaultBotBuilder(meepMeep)
-											.setConstraints(RobotConstraints)
-											.followTrajectorySequence(drive ->
-																			  drive.trajectorySequenceBuilder(Blue1)
-																					  // Start editing here
-																					  .build()
-											);
-		
-		// For the second blue location
-		// TODO: This
-		RoadRunnerBotEntity blue2 = new DefaultBotBuilder(meepMeep)
-											.setConstraints(RobotConstraints)
-											.followTrajectorySequence(drive ->
-																			  drive.trajectorySequenceBuilder(Blue2)
-																					  // Start editing here
-																					  .build()
-											);
-		
-		// For the first red location
-		// TODO: This
-		RoadRunnerBotEntity red1 = new DefaultBotBuilder(meepMeep)
-											.setConstraints(RobotConstraints)
-											.followTrajectorySequence(drive ->
-																			  drive.trajectorySequenceBuilder(Red1)
-																					  // Start editing here
-																					  .build()
-											);
-		
-		// For the second red location
-		// TODO: This
-		RoadRunnerBotEntity red2 = new DefaultBotBuilder(meepMeep)
-											.setConstraints(RobotConstraints)
-											.followTrajectorySequence(drive ->
-																			  drive.trajectorySequenceBuilder(Red2)
-																					  // Start editing here
-																					  .build()
-											);
+//		RoadRunnerBotEntity blue1 = new DefaultBotBuilder(meepMeep)
+//											.setConstraints(RobotConstraints)
+//											.followTrajectorySequence(drive ->
+//																			  drive.trajectorySequenceBuilder(Blue1)
+//																					  // Start editing here
+//																					  .build()
+//											);
+//
+//		// For the second blue location
+//		// TODO: This
+//		RoadRunnerBotEntity blue2 = new DefaultBotBuilder(meepMeep)
+//											.setConstraints(RobotConstraints)
+//											.followTrajectorySequence(drive ->
+//																			  drive.trajectorySequenceBuilder(Blue2)
+//																					  // Start editing here
+//																					  .build()
+//											);
+//
+//		// For the first red location
+//		// TODO: This
+//		RoadRunnerBotEntity red1 = new DefaultBotBuilder(meepMeep)
+//											.setConstraints(RobotConstraints)
+//											.followTrajectorySequence(drive ->
+//																			  drive.trajectorySequenceBuilder(Red1)
+//																					  // Start editing here
+//																					  .build()
+//											);
+//
+//		// For the second red location
+//		// TODO: This
+//		RoadRunnerBotEntity red2 = new DefaultBotBuilder(meepMeep)
+//											.setConstraints(RobotConstraints)
+//											.followTrajectorySequence(drive ->
+//																			  drive.trajectorySequenceBuilder(Red2)
+//																					  // Start editing here
+//																					  .build()
+//											);
 		
 		meepMeep.setBackground(MeepMeep.Background.FIELD_FREIGHTFRENZY_ADI_DARK)
 				.setDarkMode(true)
