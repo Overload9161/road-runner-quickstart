@@ -30,7 +30,7 @@ public class MeepMeepC {
 		// to get information on how to use the different methods
 		// DO NOT TOUCH
 		RoadRunnerBotEntity example = new DefaultBotBuilder(meepMeep)
-											.setConstraints(RobotConstraints)
+											.setConstraints(RobotConstraints) 
 											.followTrajectorySequence(drive ->
 																			  drive.trajectorySequenceBuilder(Blue1)
 																					  .setTangent(Math.toRadians(180))
