@@ -10,6 +10,7 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.hardware.TouchSensor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
@@ -27,6 +28,14 @@ public class Hardware extends Application {
 	HardwareMap hwMap;
 	Telemetry   telemetry;
 	OpMode      opMode;
+	
+//	public final int first = 0;
+//	public int second = 1;
+//	public int third = 2;
+	
+	public static final int first = -506;
+	public static final int second = -2324;
+	public static final int third = -3489;
 	
 	private final ElapsedTime Timer = new ElapsedTime();
 	public ElapsedTime time = new ElapsedTime();
@@ -46,6 +55,7 @@ public class Hardware extends Application {
 	public DcMotorEx[] allMotors;
 	
 	public AnalogInput potentiometer;
+	public TouchSensor lift_endstop;
 	
 	public Servo S1;
 	
@@ -152,6 +162,8 @@ public class Hardware extends Application {
 				inout = hwMap.get(DcMotorEx.class, String.valueOf(peripherals.getJSONObject("InOut").get("Name")));
 				spin = hwMap.get(DcMotorEx.class, String.valueOf(peripherals.getJSONObject("Spinner").get("Name")));
 				
+				lift.setDirection(DcMotorSimple.Direction.REVERSE);
+				
 				if ((Boolean) peripherals.getJSONObject("Lift").get("Reverse"))
 					lift.setDirection(DcMotorSimple.Direction.REVERSE);
 				if ((Boolean) peripherals.getJSONObject("InOut").get("Reverse"))
@@ -163,7 +175,7 @@ public class Hardware extends Application {
 					lift.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 				if (String.valueOf(peripherals.getJSONObject("InOut").get("BrakeType")).equals("brake"))
 					inout.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-				if(String.valueOf(peripherals.getJSONObject("Spinner").get("brake")).equals("brake"))
+				if(String.valueOf(peripherals.getJSONObject("Spinner").get("BrakeType")).equals("brake"))
 					spin.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 			} catch (IllegalArgumentException e){
 				Log.d("Tried", "We tried");
@@ -175,6 +187,9 @@ public class Hardware extends Application {
 			//S1 = hwMap.servo.get(String.valueOf(hardware.getJSONObject("Servo").getJSONObject("Test").get("name")));
 			
 			//servo = new Servo[]{S1};
+			
+			lift_endstop = hwMap.get(TouchSensor.class, (String) sensors.getJSONObject("Touch").getJSONObject("Lift").get("Name"));
+			
 			
 			allMotors = new DcMotorEx[]{frontLeft, frontRight, backLeft, backRight, lift, inout};
 		} catch (JSONException e) {
@@ -235,8 +250,6 @@ public class Hardware extends Application {
 			return null;
 		}
 		return json;
-//		Log.d("Test", json + "\n Test");
-//		Log.d("Test", "Running");
 	}
 	
 	/**
@@ -247,6 +260,22 @@ public class Hardware extends Application {
 	public void waiter(int time) {
 		Timer.reset();
 		while (true) if (!(Timer.milliseconds() < time)) break;
+	}
+	
+	public enum locations{
+		FIRST(100),
+		SECOND(200),
+		THIRD(300);
+		
+		private int value;
+		
+		locations(int value){
+			this.value = value;
+		}
+		
+		public int toInt() {
+			return value;
+		}
 	}
 	
 }

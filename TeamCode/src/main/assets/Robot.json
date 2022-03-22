@@ -54,6 +54,11 @@
     "Sensors": {
       "Voltage": {
 
+      },
+      "Touch": {
+        "Lift": {
+          "Name": "lt"
+        }
       }
     }
   }
